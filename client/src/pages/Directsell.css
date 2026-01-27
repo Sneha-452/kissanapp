@@ -1,0 +1,123 @@
+
+:root {
+    --primary-green: #2d6a4f;
+    --light-green: #e8f5e9;
+    --text-dark: #333;
+    --bg-gray: #f9fbf9;
+}
+
+.direct-sell-container, .add-listing-page {
+    background-color: var(--bg-gray);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.sell-header-hero, .listing-hero {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.marketplace-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.filter-sidebar {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.filter-group { margin-bottom: 25px; }
+.filter-group label { display: block; font-weight: 600; margin-bottom: 10px; }
+
+.apply-filters-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.crops-grid-system {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.modern-crop-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card-img-wrap img { width: 80%; height: 120px; object-fit: contain; margin: 0 auto; display: block; }
+
+.badge-grade {
+    background: var(--light-green);
+    color: var(--primary-green);
+    padding: 4px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.buy-now-btn {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+}
+
+
+.listing-card-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.listing-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.listing-illu { width: 180px; }
+
+.listing-modern-form { padding: 40px; }
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.input-box.full-width { grid-column: span 2; }
+
+.submit-listing-btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+    background: #5dbb63;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,0 +1,279 @@
+.warehouse-page {
+  background-color: #f8faf9;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Green Header */
+.warehouse-hero {
+  background-color: #2d6a4f; /* Dark Green */
+  color: white;
+  text-align: center;
+  padding: 80px 20px 120px 20px;
+}
+
+.warehouse-hero h1 { font-size: 40px; margin-bottom: 10px; }
+
+/* Main Content Wrapper */
+.main-content {
+  max-width: 1100px;
+  margin: -60px auto 0 auto;
+  padding: 0 20px;
+}
+
+/* Filter Card */
+.filter-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.filter-card h4 { margin-bottom: 20px; color: #333; }
+
+.filter-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input-group { flex: 1; display: flex; flex-direction: column; }
+.input-group label { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #555; }
+.input-group select, .input-group input {
+  padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;
+}
+
+.checkbox-wrap { display: flex; gap: 15px; padding-top: 10px; }
+.range-wrap { display: flex; gap: 10px; }
+
+.filter-buttons { margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; }
+.btn-apply { background: #2d6a4f; color: white; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.btn-reset { background: #f1f3f2; color: #555; border: 1px solid #ddd; padding: 12px 30px; border-radius: 6px; margin-left: 10px; cursor: pointer; }
+
+/* Grid and Cards */
+.warehouse-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; padding-bottom: 100px; }
+
+.w-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative; }
+.w-tag { position: absolute; top: 10px; right: 10px; background: #1b4332; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; }
+.w-card img { width: 100%; height: 180px; object-fit: cover; }
+.w-info { padding: 20px; }
+.w-loc { color: #2d6a4f; font-weight: 600; margin: 5px 0 15px 0; font-size: 14px; }
+.w-details p { font-size: 13px; color: #666; margin: 4px 0; }
+.w-btns { display: flex; gap: 10px; margin-top: 20px; }
+.btn-v { flex: 1; background: #f0f4f2; border: none; padding: 10px; border-radius: 6px; color: #2d6a4f; font-weight: 600; cursor: pointer; }
+.btn-r { flex: 1; background: #2d6a4f; border: none; padding: 10px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; }
+
+/* Empty State */
+.empty-box {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 80px;
+  background: white;
+  border-radius: 12px;
+  border: 1px dashed #ccc;
+}
+.empty-box img { width: 150px; margin-bottom: 20px; }
+
+/* Floating Add Button */
+.add-btn-container {
+  text-align: center;
+  margin: 40px 0;
+}
+.floating-add-btn {
+  background: #2d6a4f;
+  color: white;
+  padding: 18px 45px;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(45,106,79,0.3);
+  transition: 0.3s;
+}
+.floating-add-btn:hover { transform: scale(1.05); }
+
+.warehouse-page {
+  background-color: #f8faf9;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Green Header */
+.warehouse-hero {
+  background-color: #2d6a4f; /* Dark Green */
+  color: white;
+  text-align: center;
+  padding: 80px 20px 120px 20px;
+}
+
+.warehouse-hero h1 { font-size: 40px; margin-bottom: 10px; }
+
+/* Main Content Wrapper */
+.main-content {
+  max-width: 1100px;
+  margin: -60px auto 0 auto;
+  padding: 0 20px;
+}
+
+/* Filter Card */
+.filter-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.filter-card h4 { margin-bottom: 20px; color: #333; }
+
+.filter-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input-group { flex: 1; display: flex; flex-direction: column; }
+.input-group label { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #555; }
+.input-group select, .input-group input {
+  padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;
+}
+
+.checkbox-wrap { display: flex; gap: 15px; padding-top: 10px; }
+.range-wrap { display: flex; gap: 10px; }
+
+.filter-buttons { margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; }
+.btn-apply { background: #2d6a4f; color: white; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.btn-reset { background: #f1f3f2; color: #555; border: 1px solid #ddd; padding: 12px 30px; border-radius: 6px; margin-left: 10px; cursor: pointer; }
+
+
+.warehouse-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; padding-bottom: 100px; }
+
+.w-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative; }
+.w-tag { position: absolute; top: 10px; right: 10px; background: #1b4332; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; }
+.w-card img { width: 100%; height: 180px; object-fit: cover; }
+.w-info { padding: 20px; }
+.w-loc { color: #2d6a4f; font-weight: 600; margin: 5px 0 15px 0; font-size: 14px; }
+.w-details p { font-size: 13px; color: #666; margin: 4px 0; }
+.w-btns { display: flex; gap: 10px; margin-top: 20px; }
+.btn-v { flex: 1; background: #f0f4f2; border: none; padding: 10px; border-radius: 6px; color: #2d6a4f; font-weight: 600; cursor: pointer; }
+.btn-r { flex: 1; background: #2d6a4f; border: none; padding: 10px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; }
+
+
+.empty-box {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 80px;
+  background: white;
+  border-radius: 12px;
+  border: 1px dashed #ccc;
+}
+.empty-box img { width: 150px; margin-bottom: 20px; }
+
+
+.add-btn-container {
+  text-align: center;
+  margin: 40px 0;
+}
+.floating-add-btn {
+  background: #2d6a4f;
+  color: white;
+  padding: 18px 45px;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(45,106,79,0.3);
+  transition: 0.3s;
+}
+.floating-add-btn:hover { transform: scale(1.05); }
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 2000; padding: 20px;
+}
+
+/* Modal Box: Square design */
+.modal-square {
+  background: white;
+  width: 100%; max-width: 850px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; 
+}
+
+.modal-image-container img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  min-height: 450px;
+}
+
+.modal-details-container { padding: 30px; position: relative; }
+
+.close-modal-btn {
+  position: absolute;
+  top: 15px; 
+  right: 20px;
+  font-size: 35px;
+  line-height: 1;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #333;
+  z-index: 2100; 
+  transition: color 0.2s;
+}
+.close-modal-btn:hover {
+  color: #ff0000; 
+}
+
+.modal-stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin: 20px 0;
+  background: #f1f8f4; padding: 15px; border-radius: 10px;
+}
+
+.crop-tag {
+  display: inline-block;
+  background: #e8f5e9; color: #2d6a4f;
+  padding: 5px 12px; border-radius: 20px;
+  margin: 5px 5px 0 0; font-size: 12px; font-weight: 600;
+}
+
+.modal-call-link {
+  display: block; margin: 15px 0;
+  background: #2d6a4f; color: white;
+  text-align: center; padding: 12px;
+  text-decoration: none; border-radius: 8px; font-weight: bold;
+}
+
+.owner-box {
+  border-top: 1px solid #eee;
+  padding-top: 15px; margin-top: 15px;
+}
+
+.full-width { width: 100%; margin-top: 10px; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .modal-inner-grid { grid-template-columns: 1fr; }
+  .modal-image-container img { min-height: 250px; }
+}

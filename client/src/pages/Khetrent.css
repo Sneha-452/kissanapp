@@ -1,0 +1,165 @@
+.khetrent-page {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.khetrent-header h2 {
+  color: #14532d;
+  margin-bottom: 4px;
+}
+
+.khetrent-header p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* FILTERS */
+.khetrent-filters {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0 25px;
+  flex-wrap: wrap;
+}
+
+.khetrent-filters select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* GRID */
+.khetrent-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.land-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* CARD HEADER */
+.land-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.land-card-header h4 {
+  font-size: 15px;
+  color: #14532d;
+  margin: 0;
+}
+
+.land-type-badge {
+  background: #dcfce7;
+  color: #166534;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+/* BODY */
+.land-card-body {
+  margin-top: 10px;
+}
+
+.land-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.land-about {
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+}
+
+.land-owner {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ACTIONS */
+.land-actions {
+  margin-top: 12px;
+}
+
+.btn-outline {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid #166534;
+  color: #166534;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* CTA */
+.khetrent-cta {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.khetrent-cta button {
+  padding: 10px 18px;
+  background: #15803d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 320px;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-box a,
+.modal-box button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background: #166534;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: none;
+  color: #777;
+  margin-top: 10px;
+  cursor: pointer;
+}
