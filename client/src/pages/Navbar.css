@@ -1,24 +1,151 @@
 .navbar {
-  position: sticky;  
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-
   width: 100%;
   height: 60px;
   padding: 0 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-   
+  gap: 12px;
   background: linear-gradient(135deg, #bfdbfe, #c7d2fe);
-
-
   border-bottom: 1px solid #e5e7eb;
-  z-index: 100;        
+  z-index: 100;
 }
+
+/* Logo */
+.nav-left { flex-shrink: 0; }
+
+.nav-logo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  color: #166534;
+}
+
+/* Flat links row */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  flex: 1;
+  padding: 0 8px;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-link {
+  text-decoration: none;
+  color: #1e3a5f;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-link:hover  { background: #dbeafe; color: #1e40af; }
+.nav-link.active { background: #1e40af; color: #fff; }
+
+/* Right section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.nav-username {
+  font-size: 13px;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+/* Language toggle */
+.lang-toggle {
+  background: #fff;
+  border: 1.5px solid #93c5fd;
+  color: #1e3a8a;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.lang-toggle:hover { background: #dbeafe; }
+
+/* Role badge */
+.nav-role-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+.nav-role-farmer   { background: #d4edda; color: #155724; }
+.nav-role-provider { background: #cce5ff; color: #004085; }
+.nav-role-buyer    { background: #fff3cd; color: #856404; }
+
+/* Avatar circle */
+.nav-profile-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #e5f3e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-profile-initial {
+  font-weight: 600;
+  font-size: 16px;
+  color: #14532d;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+.nav-logo-img{
+  height: 55px;
+}
+
+/* Logout */
+.nav-logout-btn {
+  padding: 6px 12px;
+  background-color: #62ba2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* Mobile — collapse links into scrollable row */
+@media (max-width: 700px) {
+  .navbar { height: auto; flex-wrap: wrap; padding: 8px 12px; gap: 6px; }
+  .nav-links { order: 3; width: 100%; padding: 4px 0; }
+  .nav-link { font-size: 12px; padding: 4px 8px; }
+  .nav-username { display: none; }
+}
+
 
 .nav-left,
 .nav-center,
@@ -105,4 +232,33 @@
   font-weight: 600;
   font-size: 16px;
   color: #14532d;
+}
+
+.nav-logout-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #62ba2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: small;
+}
+
+/* ── Role badge ── */
+.nav-role-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0.4px;
+}
+
+.nav-role-farmer   { background: #d4edda; color: #155724; }
+.nav-role-provider { background: #cce5ff; color: #004085; }
+.nav-role-buyer    { background: #fff3cd; color: #856404; }
+
+.nav-logout-btn:hover {
+  background-color: #4d9b20;
 }

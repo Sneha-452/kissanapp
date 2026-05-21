@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { useState } from 'react';
 import Navbar from './pages/Navbar';
+import { LanguageProvider } from './LanguageContext';
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -19,6 +20,7 @@ import PersonalAdvisory from './pages/PersonalAdvisory';
 import Transportation from './pages/Transportation';
 import Insurance from './pages/Insurance';
 import Labour from './pages/Labour';
+// import Profile from './pages/Profile';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import AddSeeds from './pages/AddSeeds';
@@ -32,51 +34,73 @@ import BookSoilTest from './pages/BookSoilTest';
 
 
 
+// Routes allowed per role
+const ROLE_ROUTES = {
+  farmer:   ['/home','/khetrent','/warehouse','/directsell','/add-crop-listing','/soildetection','/watermanagement','/Machinery','/add-machinery','/seeds','/add-seeds','/payafterharvest','/personaladvisory','/transportation','/add-transportation','/insurance','/profile','/Chat','/khetrent/add','/book-soil-test'],
+  provider: ['/home','/khetrent','/khetrent/add','/warehouse','/add-warehouse','/Machinery','/add-machinery','/transportation','/add-transportation','/profile','/Chat'],
+  buyer:    ['/home','/warehouse','/directsell','/transportation','/profile','/Chat'],
+};
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Redirect to /home if not authenticated
   const PrivateRoute = ({ element }) => {
-    return isAuthenticated ? element : <Navigate to="/login" />
+    return isAuthenticated ? element : <Navigate to="/login" />;
+  };
+
+  // Redirect to /home if role doesn't have access
+  const RoleRoute = ({ element, allowedRoles }) => {
+    if (!isAuthenticated) return <Navigate to="/login" />;
+    const role = localStorage.getItem('userRole') || 'farmer';
+    if (!allowedRoles.includes(role)) return <Navigate to="/home" />;
+    return element;
   };
 
   return (
+    <LanguageProvider>
     <div className="App">
-      {/* ye token check karega aur isAuthenticated ko true/false karega */}
       <RefrshHandler setIsAuthenticated={setIsAuthenticated} />
-        {isAuthenticated && <Navbar/>}
+      {isAuthenticated && <Navbar />}
       <Routes>
         <Route path='/' element={<Navigate to="/login" />} />
 
         {/* Public routes */}
-        <Route path='/login' element={<Login />} />
+        <Route path='/login'  element={<Login />} />
         <Route path='/signup' element={<Signup />} />
 
-        {/* Protected routes */}
-        <Route path='/home' element={<PrivateRoute element={<Home />} />} />
-
-        <Route path='/khetrent' element={<PrivateRoute element={<Khetrent />} />} />
-        <Route path='/warehouse' element={<PrivateRoute element={<Warehouse />} />} />
-        <Route path='/directsell' element={<PrivateRoute element={<Directsell />} />} />
-        <Route path='/add-crop-listing' element={<PrivateRoute element={<AddCropListing />}/>} />
-        <Route path='/soildetection' element={<PrivateRoute element={<Soildetection />} />} />
-        <Route path='/watermanagement' element={<PrivateRoute element={<WaterManagement />} />} />
-        <Route path='/Machinery' element={<PrivateRoute element={<Machinery />} />} />
-        <Route path='/seeds' element={<PrivateRoute element={<Seeds />} />} />
-        <Route path='/payafterharvest' element={<PrivateRoute element={<Payafterharvest />} />} />
-        <Route path='/personaladvisory' element={<PrivateRoute element={<PersonalAdvisory />} />} />
-        <Route path='/transportation' element={<PrivateRoute element={<Transportation />} />} />
-        <Route path='/insurance' element={<PrivateRoute element={<Insurance />} />} />
-        <Route path='/labour' element={<PrivateRoute element={<Labour />} />} />
+        {/* All-roles protected */}
+        <Route path='/home'    element={<PrivateRoute element={<Home />} />} />
         <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />
-        <Route path='/Chat'    element={<PrivateRoute element={<Chat/>} />}/>
-        <Route path="/khetrent/add" element={<PrivateRoute element={<AddLand/>}/>}/>
-        <Route path='/add-warehouse' element={<PrivateRoute element={<AddWarehouse/>}/>}/>
-        <Route path='/add-machinery' element={<PrivateRoute element={<AddMachinery/>}/>}/>
-        <Route path='/add-seeds' element={<PrivateRoute element={<AddSeeds />}/>} />
-        <Route path='/add-transportation'element={<PrivateRoute element={<AddTransportation />} />}   />
-        <Route path='/book-soil-test' element={<PrivateRoute element={<BookSoilTest />} />}/>
+        <Route path='/Chat'    element={<PrivateRoute element={<Chat />} />} />
+
+        {/* Farmer + Provider */}
+        <Route path='/khetrent'     element={<RoleRoute element={<Khetrent />}      allowedRoles={['farmer','provider']} />} />
+        <Route path='/khetrent/add' element={<RoleRoute element={<AddLand />}       allowedRoles={['farmer','provider']} />} />
+        <Route path='/warehouse'    element={<RoleRoute element={<Warehouse />}     allowedRoles={['farmer','provider','buyer']} />} />
+        <Route path='/add-warehouse'element={<RoleRoute element={<AddWarehouse />}  allowedRoles={['farmer','provider']} />} />
+        <Route path='/Machinery'    element={<RoleRoute element={<Machinery />}     allowedRoles={['farmer','provider']} />} />
+        <Route path='/add-machinery'element={<RoleRoute element={<AddMachinery />}  allowedRoles={['farmer','provider']} />} />
+        <Route path='/transportation'    element={<RoleRoute element={<Transportation />}    allowedRoles={['farmer','provider','buyer']} />} />
+        <Route path='/add-transportation'element={<RoleRoute element={<AddTransportation />} allowedRoles={['farmer','provider']} />} />
+
+        {/* Farmer + Buyer */}
+        <Route path='/directsell'      element={<RoleRoute element={<Directsell />}     allowedRoles={['farmer','buyer']} />} />
+        <Route path='/add-crop-listing'element={<RoleRoute element={<AddCropListing />} allowedRoles={['farmer','buyer']} />} />
+
+        {/* Farmer only */}
+        <Route path='/soildetection'   element={<RoleRoute element={<Soildetection />}   allowedRoles={['farmer']} />} />
+        <Route path='/book-soil-test'  element={<RoleRoute element={<BookSoilTest />}    allowedRoles={['farmer']} />} />
+        <Route path='/watermanagement' element={<RoleRoute element={<WaterManagement />} allowedRoles={['farmer']} />} />
+        <Route path='/seeds'           element={<RoleRoute element={<Seeds />}           allowedRoles={['farmer']} />} />
+        <Route path='/add-seeds'       element={<RoleRoute element={<AddSeeds />}        allowedRoles={['farmer']} />} />
+        <Route path='/payafterharvest' element={<RoleRoute element={<Payafterharvest />} allowedRoles={['farmer']} />} />
+        <Route path='/personaladvisory'element={<RoleRoute element={<PersonalAdvisory />}allowedRoles={['farmer']} />} />
+        <Route path='/insurance'       element={<RoleRoute element={<Insurance />}       allowedRoles={['farmer']} />} />
+        <Route path='/labour'          element={<RoleRoute element={<Labour />}          allowedRoles={['farmer']} />} />
       </Routes>
     </div>
+    </LanguageProvider>
   );
 }
 

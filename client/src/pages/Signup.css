@@ -1,12 +1,71 @@
 .signup-page {
-
   background-image: url('/images/signup-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-width: 100vw;
-height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 30px 16px;
+}
+
+/* ── Role Selector ── */
+.role-selector-section {
+  margin-bottom: 20px;
+}
+
+.role-selector-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #2d6a4f;
+  margin-bottom: 10px;
+}
+
+.role-cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.role-card {
+  flex: 1;
+  min-width: 90px;
+  border: 2px solid #d4edda;
+  border-radius: 12px;
+  padding: 12px 10px;
+  cursor: pointer;
+  text-align: center;
+  background: #f9fff9;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.role-card:hover {
+  border-color: #40916c;
+  background: #ecf9f1;
+  transform: translateY(-2px);
+}
+
+.role-card--active {
+  border-color: #1b4332;
+  background: #d4edda;
+}
+
+.role-card-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1b4332;
+}
+
+.role-card-desc {
+  font-size: 0.72rem;
+  color: #555;
+  line-height: 1.3;
 }
