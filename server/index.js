@@ -13,6 +13,8 @@ const machineryRoutes = require("./Router/machineryRoutes");
 const seedRoutes = require("./Router/seedRoutes");
 const transportRoutes = require("./Router/transportRoutes");
 const soilTestRoutes = require("./Router/soilTestRoutes");
+const expertRoutes = require("./Router/ExpertRouter");
+const waterRoutes = require("./Router/WaterRouter");
  require('./Router/AuthRouter');
  
  require('./Models/db') ;
@@ -32,6 +34,8 @@ const soilTestRoutes = require("./Router/soilTestRoutes");
   app.use("/api/seeds", seedRoutes);
   app.use("/api/transportation" , transportRoutes);
   app.use("/api/soil-test", soilTestRoutes);
+  app.use("/api/experts", expertRoutes);
+  app.use("/api/water", waterRoutes);
   app.use("/uploads", express.static(path.join(__dirname, "uploads")));
   app.listen(PORT , () =>{
     console.log(`server is running on ${PORT}`)

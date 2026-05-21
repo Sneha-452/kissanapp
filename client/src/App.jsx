@@ -29,7 +29,8 @@ import AddCropListing from './pages/AddCropListing';
 import AddMachinery from './pages/AddMachinery';
 import AddTransportation from './pages/AddTransportation';
 import BookSoilTest from './pages/BookSoilTest';
-
+import AdminExpertForm from './pages/AdminExpertForm'; 
+import AddTubewell from './pages/AddTubewell';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
         <Route path='/seeds' element={<PrivateRoute element={<Seeds />} />} />
         <Route path='/payafterharvest' element={<PrivateRoute element={<Payafterharvest />} />} />
         <Route path='/personaladvisory' element={<PrivateRoute element={<PersonalAdvisory />} />} />
+       <Route path='/admin-experts' element={<AdminExpertForm />} />
         <Route path='/transportation' element={<PrivateRoute element={<Transportation />} />} />
         <Route path='/insurance' element={<PrivateRoute element={<Insurance />} />} />
         <Route path='/labour' element={<PrivateRoute element={<Labour />} />} />
@@ -75,6 +77,7 @@ function App() {
         <Route path='/add-seeds' element={<PrivateRoute element={<AddSeeds />}/>} />
         <Route path='/add-transportation'element={<PrivateRoute element={<AddTransportation />} />}   />
         <Route path='/book-soil-test' element={<PrivateRoute element={<BookSoilTest />} />}/>
+        <Route path='/add-tubewell' element={<PrivateRoute element={<AddTubewell />} />} />
       </Routes>
     </div>
   );
