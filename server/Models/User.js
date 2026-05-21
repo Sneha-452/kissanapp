@@ -6,14 +6,25 @@ const mongoose = require('mongoose') ;
         type: String, 
         required: true,
     }, 
-        email: {
+    email: {
         type: String, 
         required: true,
     }, 
-        password: {
+    password: {
         type: String, 
         required: true,
-    }
+    },
+    role: {
+        type: String,
+        enum: ['farmer', 'provider', 'buyer'],
+        default: 'farmer',
+    },
+    phone: { type: String, default: '' },
+    location: { type: String, default: '' },
+    mainCrops: { type: String, default: '' },
+    farmArea: { type: String, default: '' },
+    soilType: { type: String, default: '' },
+    irrigationType: { type: String, default: '' },
 
   }); 
   const UserModel = mongoose.model('users' , UserSchema);
