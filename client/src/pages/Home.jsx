@@ -17,7 +17,7 @@ const FARMER_TILES = (t) => [
   { icon: <FaShieldAlt  size={28} color="#166534" />, label: t('insuranceLabel'),path: '/insurance' },
   { icon: <FaTruck      size={28} color="#166534" />, label: t('transportLabel'),path: '/transportation' },
   { icon: <MdSupportAgent size={28} color="#166534" />, label: t('advisoryLabel'),path: '/personaladvisory' },
-  { icon: <FaCashRegister size={28} color="#166534" />, label: t('payAfterLabel'),path: '/payafterharvest' },
+  // { icon: <FaCashRegister size={28} color="#166534" />, label: t('payAfterLabel'),path: '/payafterharvest' },
 ];
 
 const PROVIDER_TILES = (t) => [
