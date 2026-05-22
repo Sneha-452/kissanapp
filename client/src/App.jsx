@@ -15,7 +15,7 @@ import Soildetection from './pages/Soildetection';
 import WaterManagement from './pages/WaterManagement';
 import Machinery from './pages/Machinery';
 import Seeds from './pages/Seeds';
-import Payafterharvest from './pages/Payafterharvest';
+// import Payafterharvest from './pages/Payafterharvest';
 import PersonalAdvisory from './pages/PersonalAdvisory';
 import Transportation from './pages/Transportation';
 import Insurance from './pages/Insurance';
@@ -36,7 +36,7 @@ import BookSoilTest from './pages/BookSoilTest';
 
 // Routes allowed per role
 const ROLE_ROUTES = {
-  farmer:   ['/home','/khetrent','/warehouse','/directsell','/add-crop-listing','/soildetection','/watermanagement','/Machinery','/add-machinery','/seeds','/add-seeds','/payafterharvest','/personaladvisory','/transportation','/add-transportation','/insurance','/profile','/Chat','/khetrent/add','/book-soil-test'],
+  farmer:   ['/home','/khetrent','/warehouse','/directsell','/add-crop-listing','/soildetection','/watermanagement','/Machinery','/add-machinery','/seeds','/add-seeds','/personaladvisory','/transportation','/add-transportation','/insurance','/profile','/Chat','/khetrent/add','/book-soil-test'],
   provider: ['/home','/khetrent','/khetrent/add','/warehouse','/add-warehouse','/Machinery','/add-machinery','/transportation','/add-transportation','/profile','/Chat'],
   buyer:    ['/home','/warehouse','/directsell','/transportation','/profile','/Chat'],
 };
@@ -94,7 +94,7 @@ function App() {
         <Route path='/watermanagement' element={<RoleRoute element={<WaterManagement />} allowedRoles={['farmer']} />} />
         <Route path='/seeds'           element={<RoleRoute element={<Seeds />}           allowedRoles={['farmer']} />} />
         <Route path='/add-seeds'       element={<RoleRoute element={<AddSeeds />}        allowedRoles={['farmer']} />} />
-        <Route path='/payafterharvest' element={<RoleRoute element={<Payafterharvest />} allowedRoles={['farmer']} />} />
+        {/* <Route path='/payafterharvest' element={<RoleRoute element={<Payafterharvest />} allowedRoles={['farmer']} />} /> */}
         <Route path='/personaladvisory'element={<RoleRoute element={<PersonalAdvisory />}allowedRoles={['farmer']} />} />
         <Route path='/insurance'       element={<RoleRoute element={<Insurance />}       allowedRoles={['farmer']} />} />
         <Route path='/labour'          element={<RoleRoute element={<Labour />}          allowedRoles={['farmer']} />} />

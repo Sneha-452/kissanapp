@@ -14,7 +14,7 @@ const ROLE_LINKS = (t) => ({
     { key: 'waterMgmt',      path: '/watermanagement' },
     { key: 'machinery',      path: '/Machinery' },
     { key: 'seeds',          path: '/seeds' },
-    { key: 'payAfter',       path: '/payafterharvest' },
+    // { key: 'payAfter',       path: '/payafterharvest' },
     { key: 'advisory',       path: '/personaladvisory' },
     { key: 'transportation', path: '/transportation' },
     { key: 'insurance',      path: '/insurance' },
