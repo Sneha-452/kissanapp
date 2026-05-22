@@ -31,7 +31,8 @@ import AddCropListing from './pages/AddCropListing';
 import AddMachinery from './pages/AddMachinery';
 import AddTransportation from './pages/AddTransportation';
 import BookSoilTest from './pages/BookSoilTest';
-
+import AdminExpertForm from './pages/AdminExpertForm'; 
+import AddTubewell from './pages/AddTubewell';
 
 
 // Routes allowed per role
@@ -69,6 +70,8 @@ function App() {
         <Route path='/login'  element={<Login />} />
         <Route path='/signup' element={<Signup />} />
 
+
+
         {/* All-roles protected */}
         <Route path='/home'    element={<PrivateRoute element={<Home />} />} />
         <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />
@@ -98,6 +101,9 @@ function App() {
         <Route path='/personaladvisory'element={<RoleRoute element={<PersonalAdvisory />}allowedRoles={['farmer']} />} />
         <Route path='/insurance'       element={<RoleRoute element={<Insurance />}       allowedRoles={['farmer']} />} />
         <Route path='/labour'          element={<RoleRoute element={<Labour />}          allowedRoles={['farmer']} />} />
+        <Route path='/add-tubewell' element={<PrivateRoute element={<AddTubewell />} />} />
+        <Route path='/admin-experts' element={<AdminExpertForm />} />
+
       </Routes>
     </div>
     </LanguageProvider>
