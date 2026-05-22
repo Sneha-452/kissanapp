@@ -23,13 +23,22 @@ console.log("TOKEN RECEIVED:", req.headers.authorization);
 
   try {
     const decoded = jwt.verify(auth, process.env.JWT_SECRET);
+    console.log("DECODED TOKEN:", decoded);
     req.user = decoded;
     next();
-  } catch (err) {
-    return res.status(403).json({
-      message: 'unauthorized , jwt token wrong or expired',
-    });
-  }
+  // } catch (err) {
+  //   return res.status(403).json({
+  //     message: 'unauthorized , jwt token wrong or expired',
+  //   });
+  // }
+  }catch (err) {
+  console.log("JWT ERROR:", err.message);
+
+  return res.status(403).json({
+    message: 'unauthorized , jwt token wrong or expired',
+    error: err.message
+  });
+}
 };
 
 module.exports = ensureAuthenticated;
