@@ -35,7 +35,7 @@ function Transportation() {
       if (filters.minCap) queryParams.append("minCap", filters.minCap);
       if (filters.maxCap) queryParams.append("maxCap", filters.maxCap);
 
-      const res = await fetch(`http://localhost:5000/api/transportation?${queryParams.toString()}`);
+      const res = await fetch(`https://kissanapp.onrender.com/api/transportation?${queryParams.toString()}`);
       const data = await res.json();
       if (data.success) setList(data.data);
     } catch (err) {

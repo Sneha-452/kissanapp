@@ -37,7 +37,7 @@ function AddCropListing() {
     if (imageFile) formData.append("cropImage", imageFile);
 
     try {
-      const res = await fetch("http://localhost:5000/api/crops", {
+      const res = await fetch("https://kissanapp.onrender.com/api/crops", {
         method: "POST",
         body: formData,
       });

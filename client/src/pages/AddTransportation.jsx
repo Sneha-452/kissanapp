@@ -47,7 +47,7 @@ function AddTransportation() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/transportation", {
+      const res = await fetch("https://kissanapp.onrender.com/api/transportation", {
         method: "POST",
         body: formData, 
       });

@@ -33,7 +33,7 @@ function Khetrent() {
       if (filters.minRent) queryParams.append("minRent", filters.minRent);
       if (filters.maxRent) queryParams.append("maxRent", filters.maxRent);
 
-      const res = await fetch(`http://localhost:5000/api/lands?${queryParams.toString()}`);
+      const res = await fetch(`https://kissanapp.onrender.com/api/lands?${queryParams.toString()}`);
       const result = await res.json();
       if (result.success) {
         setLands(result.data || []);

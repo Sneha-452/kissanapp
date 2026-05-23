@@ -40,7 +40,7 @@ function AddLand() {
   if (imageFile) formData.append("landImage", imageFile);
 
   try {
-    const res = await fetch("http://localhost:5000/api/lands", {
+    const res = await fetch("https://kissanapp.onrender.com/api/lands", {
       method: "POST",
 
       body: formData, 

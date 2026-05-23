@@ -29,7 +29,7 @@ function Signup() {
         if (!name || !email || !password) return handleError('Name, email and password are required');
         if (!role) return handleError('Please select your role');
         try {
-            const response = await fetch("http://localhost:5000/auth/signup", {
+            const response = await fetch("https://kissanapp.onrender.com/auth/signup", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(signupInfo)

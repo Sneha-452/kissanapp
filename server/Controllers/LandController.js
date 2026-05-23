@@ -6,7 +6,7 @@ exports.addLand = async (req, res) => {
   try {
     let landData = req.body;
     if (req.file) {
-      landData.imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+      landData.imageUrl = `https://kissanapp.onrender.com/uploads/${req.file.filename}`;
     }
     // Warehouse ki tarah seedha create
     const land = await Land.create(landData);

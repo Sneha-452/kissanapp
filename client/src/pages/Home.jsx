@@ -63,7 +63,7 @@ function Home() {
   useEffect(() => {
     (async () => {
       try {
-        const res    = await fetch('http://localhost:5000/news/farmer');
+        const res    = await fetch('https://kissanapp.onrender.com/news/farmer');
         const result = await res.json();
         if (result.success) setNews(result.data);
         else setNewsError(result.message || 'News load failed');

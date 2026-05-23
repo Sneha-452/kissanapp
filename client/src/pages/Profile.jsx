@@ -196,7 +196,7 @@ function Profile() {
 
   const fetchProfile = async () => {
     try {
-      const res  = await fetch('http://localhost:5000/api/profile', {
+      const res  = await fetch('https://kissanapp.onrender.com/api/profile', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -222,7 +222,7 @@ function Profile() {
 
   const handleSave = async () => {
     try {
-      const res  = await fetch('http://localhost:5000/api/profile', {
+      const res  = await fetch('https://kissanapp.onrender.com/api/profile', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(form),

@@ -34,7 +34,7 @@ function AdminExpertForm() {
     Object.keys(expertData).forEach(key => formData.append(key, expertData[key]));
 
     try {
-      const res = await fetch("http://localhost:5000/api/experts/add", {
+      const res = await fetch("https://kissanapp.onrender.com/api/experts/add", {
         method: "POST",
         body: formData,
       });

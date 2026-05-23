@@ -27,7 +27,7 @@ useEffect(() => {
     setLoading(true);
     try {
       // Test ke liye: Direct all data fetch
-      const res = await fetch(`http://localhost:5000/api/water/nearby?range=5000`); // 5000km range for testing
+      const res = await fetch(`https://kissanapp.onrender.com/api/water/nearby?range=5000`); // 5000km range for testing
       const result = await res.json();
       
       console.log("Total Tubewells received from DB:", result.data ? result.data.length : 0);

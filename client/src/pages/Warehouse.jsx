@@ -38,7 +38,7 @@ function Warehouse() {
       if (filters.minCap) queryParams.append("minCap", filters.minCap);
       if (filters.maxCap) queryParams.append("maxCap", filters.maxCap);
 
-      const res = await fetch(`http://localhost:5000/api/warehouses?${queryParams.toString()}`);
+      const res = await fetch(`https://kissanapp.onrender.com/api/warehouses?${queryParams.toString()}`);
       const data = await res.json();
       if (data.success) {
         setWarehouses(data.data);
@@ -66,7 +66,7 @@ function Warehouse() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/warehouses/request", {
+      const res = await fetch("https://kissanapp.onrender.com/api/warehouses/request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -174,7 +174,7 @@ function Warehouse() {
               const reset = {state: "", district: "", pincode: "", cropType: "", minCap: "", maxCap: ""};
               setFilters(reset);
               // Fetch all again after reset
-              fetch("http://localhost:5000/api/warehouses")
+              fetch("https://kissanapp.onrender.com/api/warehouses")
                 .then(res => res.json())
                 .then(data => setWarehouses(data.data));
             }}>Reset Filters</button>

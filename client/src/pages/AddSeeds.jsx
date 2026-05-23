@@ -50,7 +50,7 @@ function AddSeeds() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/seeds", {
+      const res = await fetch("https://kissanapp.onrender.com/api/seeds", {
         method: "POST",
         body: formData,
       });

@@ -4,7 +4,7 @@ exports.addTransport = async (req, res) => {
   try {
     let data = req.body;
     if (req.file) {
-      data.imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+      data.imageUrl = `https://kissanapp.onrender.com/uploads/${req.file.filename}`;
     }
     const transport = await Transportation.create(data);
     res.status(201).json({ success: true, message: "Transport added!", data: transport });

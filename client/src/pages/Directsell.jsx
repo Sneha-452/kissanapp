@@ -32,7 +32,7 @@ function Directsell() {
       if (filters.minPrice) queryParams.append("minPrice", filters.minPrice);
       if (filters.maxPrice) queryParams.append("maxPrice", filters.maxPrice);
 
-      const res = await fetch(`http://localhost:5000/api/crops?${queryParams.toString()}`);
+      const res = await fetch(`https://kissanapp.onrender.com/api/crops?${queryParams.toString()}`);
       const data = await res.json();
       if (data.success) setCrops(data.data);
     } catch (err) {

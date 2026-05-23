@@ -48,7 +48,7 @@ function Insurance() {
     try {
       setLoading(true);
 
-      const response = await fetch("http://localhost:5000/api/insurance", {
+      const response = await fetch("https://kissanapp.onrender.com/api/insurance", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

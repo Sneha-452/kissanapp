@@ -129,7 +129,7 @@ Create a `.env` file in the `server/` directory (see [Environment Variables](#-e
 npm start
 ```
 
-> Server runs on: **http://localhost:5000**
+> Server runs on: **https://kissanapp.onrender.com**
 
 ### 3️⃣ Frontend Setup
 

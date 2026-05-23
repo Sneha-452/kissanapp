@@ -69,7 +69,7 @@ const handleSubmit = async (e) => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/warehouses", {
+    const res = await fetch("https://kissanapp.onrender.com/api/warehouses", {
       method: "POST",
     
       body: formData, 
