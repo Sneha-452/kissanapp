@@ -101,7 +101,10 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://kissanapp-3ue6lvlfk-sneha-duas-projects.vercel.app"
+  ],
   credentials: true
 }));
 
