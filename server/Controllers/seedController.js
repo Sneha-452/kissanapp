@@ -4,7 +4,7 @@ exports.addSeed = async (req, res) => {
   try {
     let seedData = req.body;
     if (req.file) {
-      seedData.imageUrl = `https://kissanapp.onrender.com/uploads/${req.file.filename}`;
+      seedData.imageUrl = `https://kissanapp.onrender.com/${req.file.filename}`;
     }
     const seed = await Seed.create(seedData);
     res.status(201).json({ success: true, message: "Seeds listed successfully!", data: seed });

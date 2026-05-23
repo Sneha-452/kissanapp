@@ -7,7 +7,7 @@ exports.addCrop = async (req, res) => {
 
 
     if (req.file) {
-      cropData.imageUrl = `https://kissanapp.onrender.com/uploads/${req.file.filename}`;
+      cropData.imageUrl = `https://kissanapp.onrender.com/${req.file.filename}`;
     }
 
     const crop = await Crop.create(cropData);

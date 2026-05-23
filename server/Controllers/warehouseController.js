@@ -8,7 +8,7 @@ exports.addWarehouse = async (req, res) => {
 
   
     if (req.file) {
-      warehouseData.imageUrl = `https://kissanapp.onrender.com/uploads/${req.file.filename}`;
+      warehouseData.imageUrl = `https://kissanapp.onrender.com/${req.file.filename}`;
     }
 
     const warehouse = await Warehouse.create(warehouseData);
