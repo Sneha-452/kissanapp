@@ -103,7 +103,8 @@ app.use(bodyParser.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://kissanapp-3ue6lvlfk-sneha-duas-projects.vercel.app"
+    "https://kissanapp-3ue6lvlfk-sneha-duas-projects.vercel.app",
+    "https://kissanapp-bepc6r5nk-sneha-duas-projects.vercel.app"
   ],
   credentials: true
 }));
