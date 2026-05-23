@@ -103,11 +103,17 @@ app.use(bodyParser.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",
+    "https://kissanapp.vercel.app", // Main production domain added here
     "https://kissanapp-3ue6lvlfk-sneha-duas-projects.vercel.app",
     "https://kissanapp-bepc6r5nk-sneha-duas-projects.vercel.app"
   ],
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+// Explicitly handle preflight OPTIONS requests for all endpoints
+app.options('*', cors());
 
 app.use('/auth', AuthRouter);
 app.use('/products', AuthRouter);
