@@ -6,7 +6,7 @@ exports.addExpert = async (req, res) => {
     const expertData = req.body;
     if (req.file) {
       // Server path for the uploaded file
-      expertData.imageUrl = `https://kissanapp.onrender.com/${req.file.filename}`;
+      expertData.imageUrl = `https://kissanapp.onrender.com/uploads/${req.file.filename}`;
     }
     const expert = await Expert.create(expertData);
     res.status(201).json({ success: true, data: expert });

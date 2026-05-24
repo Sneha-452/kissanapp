@@ -4,7 +4,7 @@ exports.addMachinery = async (req, res) => {
   try {
     let toolData = req.body;
     if (req.file) {
-      toolData.imageUrl = `https://kissanapp.onrender.com/${req.file.filename}`;
+      toolData.imageUrl = `https://kissanapp.onrender.com/uploads/${req.file.filename}`;
     }
     const tool = await Machinery.create(toolData);
     res.status(201).json({ success: true, message: "Tool added successfully!", data: tool });
